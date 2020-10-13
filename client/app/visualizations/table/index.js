@@ -48,7 +48,7 @@ function getDefaultColumnsOptions(columns) {
     allowSearch: false,
     alignContent: getColumnContentAlignment(col.type),
     // `string` cell options
-    allowHTML: true,
+    allowHTML: false,
     highlightLinks: false,
   }));
 }
