@@ -29,6 +29,10 @@ export default function init(ngModule) {
         $scope.allowHTML = includes(['image', 'link'], $scope.column.displayAs);
       }
 
+      // XXX(epurkhiser): We're explicitly disabling HTML rendering, even with
+      // sanitization there's really no reason anyone needs to render HTML
+      $scope.allowHTML = false;
+
       const sanitize = $scope.allowHTML ? $sanitize : identity;
 
       const renderValue = renderFunctions[$scope.column.displayAs] || renderDefault;
